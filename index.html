@@ -1,40 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <title>prawnsca — личный сайт</title>
 </head>
 <body>
-    <div class="screen">
-        <fieldset>
-            <legend>счетчик</legend>
-            <h1 id="counter">кол-во нажатий: 0</h1>
-        </fieldset>
-        
-        <div class="panel">
-            <button id="clickb" type="submit">ЖМИ</button>
-            <button id="reset" type="submit">заново</button>
+    <header class="header">
+        <div class="header__inner">
+            <a href="#top" class="header__logo" aria-label="На главную">
+                <img src="./img/prawns.png" alt="" class="avatar" width="50" height="50">
+                <h1 class="header__title">prawnsca</h1>
+            </a>
+            <button
+                type="button"
+                class="header__burger"
+                id="menu-toggle"
+                aria-controls="site-nav"
+                aria-expanded="false"
+                aria-label="Открыть меню"
+            >
+                <span class="header__burger-line" aria-hidden="true"></span>
+                <span class="header__burger-line" aria-hidden="true"></span>
+                <span class="header__burger-line" aria-hidden="true"></span>
+            </button>
+            <nav class="header__nav" id="site-nav" aria-label="Основная навигация">
+                <ul class="header__ul">
+                    <li><a href="#about">Обо мне</a></li>
+                    <li><a href="#projects">Проекты</a></li>
+                    <li><a href="#contact">Связь</a></li>
+                    <li><a href="#game">Игра</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
+    </header>
+    <div class="menu-backdrop" id="menu-backdrop" aria-hidden="true"></div>
 
-    
+    <main class="main" id="top">
+        <section class="hero" aria-labelledby="hero-title">
+            <p class="hero__eyebrow">Привет</p>
+            <h2 id="hero-title" class="hero__title">Добро пожаловать на мою страницу</h2>
+            <p class="hero__text">
+                Здесь коротко о себе, ссылки на работы, форма обратной связи и небольшая игра
+                с твоим логотипом в духе раннера из Chrome — прокрути вниз.
+            </p>
+            <a class="hero__cta" href="#about">Узнать больше</a>
+        </section>
 
+        <section class="section" id="about" aria-labelledby="about-title">
+            <h2 id="about-title" class="section__title">Обо мне</h2>
+            <p class="section__lead">
+                Несколько строк, которые можно заменить своим текстом: чем занимаешься, что любишь в работе,
+                чему сейчас учишься.
+            </p>
+            <div class="section__grid section__grid--2">
+                <div class="card">
+                    <h3 class="card__title">Навыки</h3>
+                    <p class="card__text">
+                        HTML, CSS, JavaScript, вёрстка интерфейсов, внимание к деталям и удобству на мобильных устройствах.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3 class="card__title">Интересы</h3>
+                    <p class="card__text">
+                        Проекты с открытым кодом, эксперименты с UI, игры в браузере и спокойная музыка под кодинг.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <script>
-        let count = 0;
+        <section class="section section--muted" id="projects" aria-labelledby="projects-title">
+            <h2 id="projects-title" class="section__title">Проекты</h2>
+            <p class="section__lead">Ссылки на репозитории и демо — подставь свои URL вместо заглушек.</p>
+            <ul class="projects">
+                <li class="projects__item">
+                    <article class="project-card">
+                        <h3 class="project-card__title">Лендинг</h3>
+                        <p class="project-card__desc">Одностраничник с адаптивной сеткой и анимацией появления блоков.</p>
+                        <div class="project-card__links">
+                            <a class="project-card__link" href="#" rel="noopener noreferrer">Демо</a>
+                            <a class="project-card__link project-card__link--ghost" href="#" rel="noopener noreferrer">Код</a>
+                        </div>
+                    </article>
+                </li>
+                <li class="projects__item">
+                    <article class="project-card">
+                        <h3 class="project-card__title">Мини-приложение</h3>
+                        <p class="project-card__desc">Клиентская логика на чистом JS: формы, состояние, работа с API.</p>
+                        <div class="project-card__links">
+                            <a class="project-card__link" href="#" rel="noopener noreferrer">Демо</a>
+                            <a class="project-card__link project-card__link--ghost" href="#" rel="noopener noreferrer">Код</a>
+                        </div>
+                    </article>
+                </li>
+                <li class="projects__item">
+                    <article class="project-card">
+                        <h3 class="project-card__title">Эксперимент</h3>
+                        <p class="project-card__desc">Canvas, анимация или необычная типографика — всё, что хочется показать.</p>
+                        <div class="project-card__links">
+                            <a class="project-card__link" href="#" rel="noopener noreferrer">Демо</a>
+                            <a class="project-card__link project-card__link--ghost" href="#" rel="noopener noreferrer">Код</a>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+        </section>
 
-        document.getElementById("clickb").onclick = function() {
-            count += 1;
-            document.getElementById("counter").textContent = `кол-во нажатий: ${count}`;
-        }
+        <section class="section" id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title" class="section__title">Обратная связь</h2>
+            <p class="section__lead">
+                Заполни поля и нажми кнопку: откроется почтовый клиент с готовым письмом. Свой адрес для приёма почты
+                укажи в атрибуте <code class="inline-code">data-contact-email</code> у формы в разметке.
+            </p>
+            <form class="contact-form" id="contact-form" data-contact-email="mail@example.com">
+                <div class="contact-form__row">
+                    <label class="contact-form__label" for="contact-name">Имя</label>
+                    <input class="contact-form__input" id="contact-name" name="name" type="text" autocomplete="name" placeholder="Как к тебе обращаться">
+                </div>
+                <div class="contact-form__row">
+                    <label class="contact-form__label" for="contact-email">Электронная почта</label>
+                    <input class="contact-form__input" id="contact-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+                </div>
+                <div class="contact-form__row">
+                    <label class="contact-form__label" for="contact-message">Сообщение</label>
+                    <textarea class="contact-form__textarea" id="contact-message" name="message" rows="5" required placeholder="Текст сообщения…"></textarea>
+                </div>
+                <button class="contact-form__submit" type="submit">Отправить письмо</button>
+            </form>
+        </section>
 
-        document.getElementById("reset").onclick = function(){
-            count = 0;
-            document.getElementById("counter").textContent = `кол-во нажатий: ${count}`;
-        }
+        <section class="section section--game" id="game" aria-labelledby="game-title">
+            <h2 id="game-title" class="section__title">Прыжок с логотипом</h2>
+            <p class="section__lead">
+                Тот же раннер, что в Chrome без сети, но вместо динозавра — картинка из <code class="inline-code">img/prawns.png</code>.
+                Уклоняйся от кактусов: пробел, стрелка вверх или клик по полю.
+            </p>
+            <div class="dino-wrap">
+                <div class="dino-hud">
+                    <span class="dino-hud__label">Очки</span>
+                    <span class="dino-hud__score" id="dino-score">0</span>
+                    <button type="button" class="dino-restart" id="dino-restart" hidden>Заново</button>
+                </div>
+                <canvas id="dino-canvas" width="720" height="200"></canvas>
+                <p class="dino-hint" id="dino-hint">Пробел, стрелка вверх или касание — прыжок. Нажми, чтобы начать.</p>
+            </div>
+        </section>
+    </main>
 
-    </script>
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="footer__name">prawnsca</span>
+                <p class="footer__tag">Личная страница и песочница для экспериментов.</p>
+            </div>
+            <nav class="footer__nav" aria-label="Навигация в подвале">
+                <ul class="footer__ul">
+                    <li><a href="#about">Обо мне</a></li>
+                    <li><a href="#projects">Проекты</a></li>
+                    <li><a href="#contact">Связь</a></li>
+                    <li><a href="#game">Игра</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p class="footer__copy">© 2026 prawnsca. Все права на контент принадлежат автору.</p>
+    </footer>
+
+    <script src="./server.js"></script>
+    <script src="./dino.js"></script>
 </body>
 </html>
