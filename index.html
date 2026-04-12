@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="screen">
+        <fieldset>
+            <legend>счетчик</legend>
+            <h1 id="counter">кол-во нажатий: 0</h1>
+        </fieldset>
+        
+        <div class="panel">
+            <button id="clickb" type="submit">ЖМИ</button>
+            <button id="reset" type="submit">заново</button>
+        </div>
+    </div>
+
+    
+
+
+    <script>
+        let count = 0;
+
+        document.getElementById("clickb").onclick = function() {
+            count += 1;
+            document.getElementById("counter").textContent = `кол-во нажатий: ${count}`;
+        }
+
+        document.getElementById("reset").onclick = function(){
+            count = 0;
+            document.getElementById("counter").textContent = `кол-во нажатий: ${count}`;
+        }
+
+    </script>
+</body>
+</html>
