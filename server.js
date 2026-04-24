@@ -5,6 +5,7 @@ const menuBackdrop = document.getElementById('menu-backdrop');
 
 const MENU_QUERY = '(max-width: 768px)';
 
+
 function isMobileMenu() {
     return window.matchMedia(MENU_QUERY).matches;
 }
