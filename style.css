@@ -472,7 +472,7 @@ body.is-menu-open {
 
 .contact-social__link:hover {
     border-color: #1a1a1a;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 .contact-social__link:focus-visible {
@@ -483,6 +483,11 @@ body.is-menu-open {
 .contact-social__link--tg:hover {
     color: #229ed9;
     border-color: #229ed9;
+}
+
+.contact-social__link--sk:hover {
+    color: #eb0e0e;
+    border-color: #c00303;
 }
 
 .contact-social__icon {
