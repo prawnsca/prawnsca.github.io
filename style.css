@@ -672,3 +672,24 @@ body.is-menu-open {
     color: #888;
     text-align: center;
 }
+
+
+/* --------------download------------ */
+
+.page { display: none; }
+.page.active { display: block; }
+
+nav { margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+nav button { 
+    padding: 10px 20px; 
+    margin-right: 5px;
+    cursor: pointer;
+}
+nav button.active-tab { 
+    background: #007bff; 
+    color: white; 
+    border: none;
+}

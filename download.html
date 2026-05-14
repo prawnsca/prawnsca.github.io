@@ -1,41 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Скачивание файла</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Скачать файлы</title>
+    <style>
+        .page { display: none; }
+        .page.active { display: block; }
+        
+        nav { margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        nav button { 
+            padding: 10px 20px; 
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        nav button.active-tab { 
+            background: #007bff; 
+            color: white; 
+            border: none;
+        }
+    </style>
 </head>
 <body>
+    <header style="padding: 5px;">
+        <nav>
+            <button class="tab active-tab" onclick="showPage('home')">Мобильное приложение</button>
+            <button class="tab" onclick="showPage('about')">Мои игры</button>
+            <button class="tab" onclick="showPage('contacts')">Веб-проекты</button>
+            <a class="project-card__link" href="./index.html">Назад</a>
+        </nav>
+    </header>
 
+    <div id="home" class="page active">
+        <h1>Мобильное приложение</h1>
+        <p>список моих мобилок :</p>
+        <ul style="list-style: disc; padding: 20px;">
+            <li>
+                <fieldset>
+                    <legend>Gupi</legend>
+                    <div class="download__infoMob" style="display: flex; justify-content: center;">
+                        <img src="img/prawns.png" alt="картинка">
+                    </div>
+                    <label>
+                        Gupi
+                        <a class="project-card__link" href="#">Скачать</a>
+                    </label>
+                </fieldset>
+            </li>
+        </ul>
+    </div>
 
-    <a class="hero__cta" href="./index.html">BACK</a>
-    
-    <div style="padding-inline: 30px; display: flex;">
-    
-        <fieldset style="padding: 5px;">
-            <legend>Презентации</legend>
-            <label>
-                <span>Слуцкий</span>
-                <a class="project-card__link project-card__link--ghost" download href="./files/Слуцкий Евгений Евгеньевич.pptx"">Скачать</a>  
-            </label>
-             
-        </fieldset>
-        
-        
+    <div id="about" class="page">
+        <h1>Игры</h1>
     </div>
-    <div id="mobgug" style="padding-inline: 30px; display: flex;">
-    
-        <fieldset style="padding: 5px;">
-            <legend>Мобильное Приложение</legend>
-            <label>
-                <span>Gugip </span>
-                <a class="project-card__link project-card__link--ghost" download href="./files/Слуцкий Евгений Евгеньевич.pptx"">Скачать</a>  
-            </label>
-             
-        </fieldset>
-        
-        
+
+    <div id="contacts" class="page">
+        <h1>Веб-проекты</h1>
+        <p>Телефон: +7 #############</p>
+        <p>Email: #############</p>
     </div>
+
+    <script>
+        function showPage(pageId) {
+            // Скрыть все страницы
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Убрать активный класс со всех вкладок
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+            
+            // Показать нужную страницу
+            document.getElementById(pageId).classList.add('active');
+            
+            // Подсветить активную вкладку
+            event.target.classList.add('active-tab');
+        }
+    </script>
 </body>
 </html>
