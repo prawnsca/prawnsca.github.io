@@ -679,10 +679,7 @@ body.is-menu-open {
 .page { display: none; }
 .page.active { display: block; }
 
-nav { margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-}
+
 nav button { 
     padding: 10px 20px; 
     margin-right: 5px;
