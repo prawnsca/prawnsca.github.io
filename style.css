@@ -684,9 +684,10 @@ nav button {
     padding: 10px 20px; 
     margin-right: 5px;
     cursor: pointer;
+    border-radius: 15px;
 }
 nav button.active-tab { 
-    background: #007bff; 
-    color: white; 
+    background: #ff590c; 
+    color: rgb(255, 255, 255); 
     border: none;
 }
