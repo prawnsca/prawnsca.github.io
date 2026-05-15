@@ -687,7 +687,7 @@ nav button {
     border-radius: 15px;
 }
 nav button.active-tab { 
-    background: #ff590c; 
+    background: #ff590c;
     color: rgb(255, 255, 255); 
     border: none;
 }
